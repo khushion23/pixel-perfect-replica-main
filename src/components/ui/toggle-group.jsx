@@ -1,0 +1,35 @@
+import * as React from "react";
+import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
+// import { toggleVariants } from "@/components/ui/toggle.jsx"; // Not implemented, stubbed for now
+
+// Stub for cn utility
+const cn = (...args) => args.filter(Boolean).join(' ');
+
+const ToggleGroupContext = React.createContext({
+  size: "default",
+  variant: "default",
+});
+
+const ToggleGroup = React.forwardRef(({ className, variant, size, children, ...props }, ref) => (
+  <ToggleGroupPrimitive.Root ref={ref} className={cn("flex items-center justify-center gap-1", className)} {...props}>
+    <ToggleGroupContext.Provider value={{ variant, size }}>{children}</ToggleGroupContext.Provider>
+  </ToggleGroupPrimitive.Root>
+));
+ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName;
+
+const ToggleGroupItem = React.forwardRef(({ className, children, variant, size, ...props }, ref) => {
+  const context = React.useContext(ToggleGroupContext);
+  // toggleVariants is not implemented, so just use className
+  return (
+    <ToggleGroupPrimitive.Item
+      ref={ref}
+      className={cn(className)}
+      {...props}
+    >
+      {children}
+    </ToggleGroupPrimitive.Item>
+  );
+});
+ToggleGroupItem.displayName = ToggleGroupPrimitive.Item.displayName;
+
+export { ToggleGroup, ToggleGroupItem };
