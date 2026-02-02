@@ -24,7 +24,7 @@ const sectors = [
 
 function FocusedSectorsSection() {
   return (
-    <section className="py-8 bg-white">
+    <section id="focused-sectors" className="py-8 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-4">

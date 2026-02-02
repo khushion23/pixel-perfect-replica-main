@@ -32,7 +32,7 @@ function ContactSection() {
       {/* Background image and orange overlay */}
       <img src={contactPhoneImage} alt="Contact BG" className="absolute inset-0 w-full h-full object-cover z-0" />
       <div className="absolute inset-0 bg-[#E85D2A] opacity-90 z-10" />
-      <div className="relative z-20 w-full max-w-[1200px] flex flex-col md:flex-row items-center justify-between gap-0 md:gap-10 px-4 py-16">
+      <div className="max-w-6xl mx-auto px-4 relative z-20 w-full flex flex-col md:flex-row items-center justify-between gap-0 md:gap-10 py-16">
         {/* Left: Form */}
         <div className="flex-1 flex flex-col items-start justify-center w-full max-w-[600px]">
           <h2 className="text-white text-3xl md:text-4xl font-extrabold mb-2 leading-tight text-center w-full">Connect with Us</h2>

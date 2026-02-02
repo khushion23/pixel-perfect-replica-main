@@ -1,69 +1,17 @@
-import backgroundImg from "@/assets/portrait-of-a-happy-creative-team-of-people-talking-in-the-office-at-the-meeting-photo.jpg";
-import AnimatedUnderline from "./ui/AnimatedUnderline.jsx";
-import onLogoWhite from "@/assets/on-logo-white.png";
-const whatsappIcon = "/whatsappicon.png";
-import practicalIcon from "@/assets/8740925.png";
-import aiIcon from "@/assets/pngtree-stunning-ai-powered-robot-interacting-with-transparent-touchscreen-png-image_20613634.png";
-import brandIcon from "@/assets/download (3).jpg";
-import { useInView } from "@/hooks/useInView";
 
-const coverItems = [
-  {
-    title: "Unlock WhatsApp",
-    description: "Discover how to use WhatsApp Business Calling to initiate personalized, high-intent customer conversations.",
-    icon: whatsappIcon
-  },
-  {
-    title: "Practical use cases",
-    description: "Explore a proven framework for customer engagement that you can apply to your own campaigns.",
-    icon: practicalIcon
-  },
-  {
-    title: "AI-powered journeys",
-    description: "See how AI powered WhatsApp Flows can make every interaction quicker, smarter, and more relevant for your customers.",
-    icon: aiIcon
-  },
-  {
-    title: "Brand stories",
-    description: "Hear real-life examples of leading brands engaging users with AI powered WhatsApp Flows & Business Calling.",
-    icon: brandIcon
-  }
-];
+// Social icons (replace with your own SVGs or images if needed)
+const InstagramIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#fff"/><path d="M21.333 10.667a2.667 2.667 0 0 1 2.667 2.666v6.334a2.667 2.667 0 0 1-2.667 2.666h-6.666A2.667 2.667 0 0 1 12 19.667v-6.334A2.667 2.667 0 0 1 14.667 10.667h6.666zm0-1.334h-6.666A4 4 0 0 0 10 13.333v6.334a4 4 0 0 0 4 4h6.666a4 4 0 0 0 4-4v-6.334a4 4 0 0 0-4-4zm-3.333 2.667a3.333 3.333 0 1 1 0 6.666 3.333 3.333 0 0 1 0-6.666zm0 1.334a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm4.333-.667a.667.667 0 1 1 0 1.334.667.667 0 0 1 0-1.334z" fill="#0A1A36"/></svg>
+);
+const WhatsappIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="10" fill="#C6F5B6"/><path d="M16 8.667a7.333 7.333 0 0 0-6.4 10.933l-1.067 3.2 3.2-1.067A7.333 7.333 0 1 0 16 8.667zm0 13.333a6 6 0 0 1-3.2-.933l-.227-.133-1.893.627.627-1.893-.133-.227A6 6 0 1 1 16 22z" fill="#0A1A36"/><path d="M20.267 18.267c-.267-.133-1.6-.8-1.84-.893-.24-.093-.413-.133-.587.133-.173.267-.68.893-.827 1.067-.147.173-.307.2-.573.067-.267-.133-1.12-.413-2.133-1.32-.788-.7-1.32-1.56-1.48-1.827-.16-.267-.017-.413.12-.547.12-.12.267-.307.4-.453.133-.147.173-.253.267-.427.093-.173.047-.32-.02-.453-.067-.133-.587-1.413-.8-1.92-.213-.507-.427-.44-.587-.447-.16-.007-.347-.01-.533-.01-.187 0-.493.067-.747.32-.253.253-.987.96-.987 2.347 0 1.387 1.013 2.733 1.16 2.92.147.187 2.013 3.093 5.013 3.093 2.987 0 3.573-1.987 3.573-2.773 0-.12-.013-.227-.04-.32-.027-.093-.24-.16-.507-.293z" fill="#0A1A36"/></svg>
+);
 
 function WhatWeCoverSection() {
-  const [sectionRef, inView] = useInView({ threshold: 0.15 });
-  return (
-    <section
-      id="cover"
-      ref={sectionRef}
-      className={`relative w-full py-20 px-0 flex flex-col items-center justify-center font-lato overflow-hidden section-reveal${inView ? " in-view" : ""}`}
-    >
-      <img src={backgroundImg} alt="background" className="absolute inset-0 w-full h-full object-cover opacity-60 z-0" />
-      <div className="absolute inset-0 w-full h-full bg-[#E85D2A] opacity-80 z-10" />
-      <div className="relative z-20 w-full max-w-[1100px] mx-auto flex flex-col items-center justify-center px-4">
-          <h2 className="text-white text-4xl md:text-5xl font-bold mb-2 mt-2 text-center section-underline-animate" style={{display:'inline-block'}}>{"What we'll cover"}</h2>
-          <div className="mb-12 mx-auto flex justify-center">
-            <AnimatedUnderline width={100} height={6} lineColor="#fff" dotColor="#0A1833" duration={1.2} />
-          </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-          {coverItems.map((item, idx) => (
-            <div key={idx} className="flex flex-col bg-white/10 backdrop-blur-lg rounded-xl p-7 min-h-[170px] shadow-2xl border border-white/20 relative overflow-hidden group card-hover-animate">
-              <div className="absolute inset-0 bg-black/30 opacity-70 rounded-xl z-0 group-hover:opacity-80 transition-opacity duration-300" />
-              <div className="flex items-start gap-4 mb-2 relative z-10">
-                <div className="w-10 h-10 rounded-lg bg-white/80 flex items-center justify-center shadow-md">
-                  <img src={item.icon} alt="icon" className="w-7 h-7 object-contain" />
-                </div>
-                <div>
-                  <h3 className="text-white text-lg font-bold mb-1 drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">{item.title}</h3>
-                  <p className="text-white text-base font-semibold leading-relaxed opacity-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] tracking-wide">{item.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  // Section removed as requested
+  return null;
 }
+
+
 
 export default WhatWeCoverSection;

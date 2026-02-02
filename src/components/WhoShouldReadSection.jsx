@@ -10,7 +10,7 @@ const audienceItems = [
 function WhoShouldReadSection() {
   return (
     <section className="py-8 bg-white">
-      <div className="max-w-5xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-4">
           <h2 className="text-[#0A1A36] text-3xl md:text-4xl font-extrabold mb-2">Who Should Read This?</h2>
           <div className="flex justify-center">

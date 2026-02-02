@@ -4,7 +4,7 @@ import { Twitter, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
 function Footer() {
   return (
     <footer className="bg-[#FF6A29] py-12">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col items-center">
         {/* Logo */}
         <div className="flex flex-col items-center mb-6">
           <img src={onLogoWhite} alt="Observe Now" className="h-24 mb-2" />
@@ -38,9 +38,6 @@ function Footer() {
         </div>
         {/* Legal text */}
         <div className="text-center text-white text-xs leading-relaxed max-w-4xl mx-auto">
-          <p className="mb-2">
-            The sender of this communication is INFOBIP Ltd., with registered seat in 35-38 New Bridge, Fifth Floor, London EC4V 6BW, UK. To exercise your rights of access, rectification, erasure or objection, please send an email to data-protection-officer@infobip.com.
-          </p>
           <p>
             For more information on how we collect and process your personal data please read our <a href="https://www.infobip.com/policies/privacy-notice" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">Privacy Policy</a>.
           </p>
